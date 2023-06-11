@@ -1,0 +1,3 @@
+https://api.openweathermap.org/data/2.5/weather?q=Berlin&appid=c7913816425d5ebb387bc8c78b88f848
+--
+https://api.openweathermap.org/data/2.5/weather?q=Berlin&appid=c7913816425d5ebb387bc8c78b88f848&units=metric
