@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <style>
+            @-webkit-keyframes spin-right {
+            100% {
+                -webkit-transform: rotate(360deg);
+                -moz-transform: rotate(360deg);
+                -ms-transform: rotate(360deg);
+                -o-transform: rotate(360deg);
+                transform: rotate(360deg);
+                }
+                }
+
+            body {
+                margin: 0;
+                height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background: black;
+                overflow: hidden;            
+            }
+
+            .container{
+                width: 40em;
+                font-size: 10px;
+                height: 40em;
+                position: relative;
+            }
+
+            .sun{
+                position: absolute;
+                top: 15em;
+                left: 15em;
+                width: 10em;
+                height: 10em;
+                background-image: linear-gradient(yellow, darkgoldenrod);
+                border-radius: 50%;
+                box-shadow: 0 0 3em white;
+                object-fit: contain;
+            }
+
+            .earth,.moon {
+                position: absolute;
+                border-style: solid;
+                border-color: white transparent transparent transparent;
+                border-width: 0.1em;
+                border-radius: 50%;
+            }
+
+            .earth{
+                top: 5em;
+                left: 5em;
+                width: 30em;
+                height: 30em;
+                -webkit-animation: spin-right 20s linear infinite;
+                animation: spin-right 30.5s linear infinite;
+            }
+
+            .moon{
+                top: 0;
+                right: 0;
+                width: 8em;
+                height: 8em;
+                -webkit-animation: spin-right 10s linear infinite;
+                animation: spin-right 2.5s linear infinite;
+            }
+            
+            .earth::before,
+            .moon::before {
+                content:'';
+                position: absolute;
+                border-radius: 50%;                    
+            
+            }
+
+            .earth::before {
+                top: 2.8em;
+                right: 2.8em;
+                width: 3em;
+                height: 3em;
+                background-image: linear-gradient(green, aqua);
+            }
+
+            .moon::before {
+                top: 0.8em;
+                right: 0.2em;
+                width: 1.3em;
+                height: 1.3em;
+                background-image: linear-gradient(white, gray, silver);
+            }
+
+            @keyframes orbit {
+                to {
+                    transform: rotate(360deg);
+                }
+            }
+
+        </style>
+    </head>
+    <body>
+
+        <div class="container">
+        <div>
+        <div class="sun"></div>
+        </div>
+            <div class="earth">
+                <div class="moon"></div>
+            </div>
+        </div>
+    </body>
+</html>
